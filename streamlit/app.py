@@ -8,8 +8,7 @@ import numpy as np
 # ========================
 st.set_page_config(page_title="YouTube Analytics", layout="wide")
 
-DATA_PATH = "../data/videos_metadata.csv"
-
+DATA_PATH = "data/videos_metadata.csv"
 
 # ========================
 # Load Data
