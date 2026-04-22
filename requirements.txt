@@ -4,3 +4,6 @@ python-dotenv
 kagglehub
 snowflake-connector-python
 pandas
+streamlit
+matplotlib
+numpy
