@@ -16,16 +16,16 @@ https://daheeh-analytics-pipeline.streamlit.app/
 ## Dashboard Preview
 
 <p align="center">
-  <!-- Dashboard Image -->
-  <a href="https://github.com/muhammadbonn/daheeh-analytics-pipeline/blob/main/youtube_analytics_Streamlit.png">
-    <img src="https://raw.githubusercontent.com/muhammadbonn/daheeh-analytics-pipeline/main/youtube_analytics_Streamlit.png" width="80%" />
+  <!-- Duration vs Views -->
+  <a href="https://github.com/muhammadbonn/daheeh-analytics-pipeline/blob/main/duration_vs_views.png">
+    <img src="https://raw.githubusercontent.com/muhammadbonn/daheeh-analytics-pipeline/main/duration_vs_views.png" width="60%" />
   </a>
 </p>
 
 <p align="center">
-  <!-- Duration vs Views -->
-  <a href="https://github.com/muhammadbonn/daheeh-analytics-pipeline/blob/main/duration_vs_views.png">
-    <img src="https://raw.githubusercontent.com/muhammadbonn/daheeh-analytics-pipeline/main/duration_vs_views.png" width="60%" />
+  <!-- Dashboard Image -->
+  <a href="https://github.com/muhammadbonn/daheeh-analytics-pipeline/blob/main/youtube_analytics_Streamlit.png">
+    <img src="https://raw.githubusercontent.com/muhammadbonn/daheeh-analytics-pipeline/main/youtube_analytics_Streamlit.png" width="80%" />
   </a>
 </p>
 
