@@ -1,0 +1,88 @@
+# ==============================================================================
+# Common configuration shared across all Airflow services
+# ==============================================================================
+x-airflow-common:
+  &airflow-common
+  build: .
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+
+    # Important for Airflow security
+    AIRFLOW__CORE__FERNET_KEY: ''
+
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+
+    # Critical so Airflow can import from src
+    PYTHONPATH: /opt/airflow
+
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./src:/opt/airflow/src
+    - ./config:/opt/airflow/config
+    - ./data:/opt/airflow/data
+
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+
+services:
+  # ==============================================================================
+  # PostgreSQL
+  # ==============================================================================
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data   # Persist database
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+
+
+  # ==============================================================================
+  # Airflow Webserver - The UI accessible via browser
+  # ==============================================================================
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "2727:8080" # Accessible at http://localhost:2727
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+
+  # ==============================================================================
+  # Airflow Scheduler - The brain that triggers the tasks
+  # ==============================================================================
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: always
+
+
+  # ==============================================================================
+  # Airflow Init - Runs once to initialize the DB and create the Admin user
+  # ==============================================================================
+  airflow-init:
+    <<: *airflow-common
+    command: >
+      bash -c "airflow db upgrade && airflow users create --username admin --password admin --firstname admin --lastname user --role Admin --email admin@example.com"
+
+
+# ==============================================================================
+# Volumes
+# ==============================================================================
+volumes:
+  postgres-db-volume:

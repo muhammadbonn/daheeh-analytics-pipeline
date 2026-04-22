@@ -1,0 +1,6 @@
+boto3
+pyspark
+python-dotenv
+kagglehub
+snowflake-connector-python
+pandas
