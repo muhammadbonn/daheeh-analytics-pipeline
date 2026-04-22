@@ -31,12 +31,13 @@ End-to-end **Data Engineering + Analytics project** that:
 ```
 daheeh-analytics-pipeline
 │
-├── dags/ # Airflow DAGs
-├── src/ # ETL logic (extract, transform, load)
-├── config/ # playlist IDs
-├── data/ # output CSV
-├── streamlit/ # dashboard app
+├── config/                 # Playlist IDs
+├── dags/                   # Airflow DAGs
+├── data/                   # Output CSV
+├── src/                    # ETL logic (extract, transform, load)
+├── streamlit/              # Dashboard app
 ├── docker-compose.yml
+├── Dockerfile
 ├── requirements.txt
 └── README.md
 ```
@@ -75,7 +76,7 @@ Open Airflow UI
 Go to: Admin → Variables → Add
 ```
 Key: YOUTUBE_API_KEY
-Value: YOUR_API_KEY
+Value: *****************
 ```
 
 ### 5️⃣ Run the Pipeline
@@ -89,3 +90,23 @@ daheeh_youtube_pipeline
 Click ▶️ Trigger
 
 📁 Output File: data/videos_metadata.csv
+
+---
+### 📊 Run Streamlit Dashboard (Local)
+```
+cd streamlit
+streamlit run app.py
+```
+
+⚠️ Important (Local vs Deployment)
+
+📍 Local Run
+
+DATA_PATH = "../data/videos_metadata.csv"
+
+🌐 Streamlit Cloud Deployment
+
+DATA_PATH = "data/videos_metadata.csv"
+
+👉 Because Streamlit Cloud cannot access local paths outside repo
+---
