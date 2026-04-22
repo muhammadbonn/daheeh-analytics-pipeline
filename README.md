@@ -1,11 +1,30 @@
-# 🎥📊 YouTube Data Pipeline & Analytics Dashboard
+# YouTube Data Pipeline & Analytics Dashboard
 
-🔗 **Live Demo:**  
-👉 https://daheeh-analytics-pipeline.streamlit.app/
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Airflow](https://img.shields.io/badge/Airflow-Orchestration-red?logo=apacheairflow)
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue?logo=docker)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-ff4b4b?logo=streamlit)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-black?logo=pandas)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## 🚀 Overview
+🔗 **Live Demo:**  
+https://daheeh-analytics-pipeline.streamlit.app/
+
+---
+
+## Dashboard Preview
+
+<p align="center">
+  <a href="https://github.com/muhammadbonn/daheeh-analytics-pipeline/blob/main/youtube_analytics_Streamlit.png">
+    <img src="https://raw.githubusercontent.com/muhammadbonn/daheeh-analytics-pipeline/main/youtube_analytics_Streamlit.png" width="80%" />
+  </a>
+</p>
+
+---
+
+## Overview
 
 End-to-end **Data Engineering + Analytics project** that:
 
@@ -16,7 +35,7 @@ End-to-end **Data Engineering + Analytics project** that:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - 🐍 Python  
 - ⚙️ Apache Airflow  
@@ -27,7 +46,7 @@ End-to-end **Data Engineering + Analytics project** that:
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 ```
 daheeh-analytics-pipeline
 │
@@ -45,7 +64,7 @@ daheeh-analytics-pipeline
 
 ---
 
-## ⚙️ How to Run Locally (Full Pipeline)
+## How to Run Locally (Full Pipeline)
 
 ### 1️⃣ Clone Repo
 
