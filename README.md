@@ -101,12 +101,13 @@ streamlit run app.py
 ⚠️ Important (Local vs Deployment)
 
 📍 Local Run
-
+```
 DATA_PATH = "../data/videos_metadata.csv"
-
+```
 🌐 Streamlit Cloud Deployment
-
+```
 DATA_PATH = "data/videos_metadata.csv"
-
+```
 👉 Because Streamlit Cloud cannot access local paths outside repo
+
 ---
