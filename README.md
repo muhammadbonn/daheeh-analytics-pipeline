@@ -36,7 +36,8 @@ Ahmed El-Ghandour, known as "El Daheeh" (The Nerd), is a prominent Egyptian educ
 
 End-to-end **Data Engineering + Analytics project** that:
 
-- Extracts all episode data from the YouTube API  
+- Collect episode links from different channels and playlists
+- Extracts data from the YouTube API  
 - Processes & cleans the data using Airflow  
 - Stores structured data locally  
 - Visualizes insights through an interactive Streamlit dashboard  
