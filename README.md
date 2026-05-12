@@ -32,10 +32,11 @@ https://daheeh-analytics-pipeline.streamlit.app/
 ---
 
 ## Overview
+Ahmed El-Ghandour, known as "El Daheeh" (The Nerd), is a prominent Egyptian educator and popular science YouTuber born in 1994, renowned for making complex scientific and historical topics accessible through humor and fast-paced commentary. He is a leading content creator in the Arab world, with millions of followers on YouTube. https://www.youtube.com/channel/UCqW7G8SmyeEeQYzLOk5tdSg
 
 End-to-end **Data Engineering + Analytics project** that:
 
-- Extracts data from YouTube API  
+- Extracts all episode data from the YouTube API  
 - Processes & cleans the data using Airflow  
 - Stores structured data locally  
 - Visualizes insights through an interactive Streamlit dashboard  
